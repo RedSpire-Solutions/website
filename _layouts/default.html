@@ -36,9 +36,37 @@
 
 {% if site.external %}
 <footer>
-  <div>{{ site.description | default: site.title }}</div>
-  {% include menu.html menu=site.external %}
+  <div style="margin-bottom: 1rem;">{{ site.description | default: site.title }}</div>
+  <div style="margin-top: 1.5rem; font-size: 0.9em; opacity: 0.8; line-height: 1.6;" data-nosnippet>
+    <strong>Business Address:</strong><br>
+    <span data-address="6545 Market Ave. North STE 100"></span><br>
+    <span data-address="North Canton, Ohio 44721"></span><br>
+    <span data-address="United States"></span><br>
+    <em style="font-size: 0.9em;">(Not a mailing address)</em><br><br>
+    <nav style="display: inline;">
+      <a href="#" data-contact="contact" data-domain="redspire.io" class="email-link" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+        <span class="email-text"></span>
+        <svg aria-label="Email" class="icon"><use xlink:href="{{ "/assets/fontawesome/icons.svg" | relative_url }}#envelope"></use></svg>
+      </a>
+    </nav>
+  </div>
 </footer>
+<script>
+  // Render address fields
+  document.querySelectorAll('[data-address]').forEach(function(el) {
+    el.textContent = el.getAttribute('data-address');
+  });
+
+  // Render email
+  var emailLinks = document.querySelectorAll('.email-link');
+  emailLinks.forEach(function(link) {
+    var contact = link.getAttribute('data-contact');
+    var domain = link.getAttribute('data-domain');
+    var email = contact + '@' + domain;
+    link.href = 'mailto:' + email;
+    link.querySelector('.email-text').textContent = email;
+  });
+</script>
 {% endif %}
 
 </html>

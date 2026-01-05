@@ -3,8 +3,35 @@ layout: default
 title: "Home"
 ---
 
-{% if site.show_excerpts %}
-  {% include home.html %}
-{% else %}
-  {% include archive.html title="Posts" %}
-{% endif %}
+<article>
+  <div style="text-align: center; margin: 3rem 0;">
+    <img src="{{ "/assets/redspire-logo.png" | relative_url }}" alt="RedSpire Solutions Logo" style="max-width: 300px; height: auto; margin-bottom: 2rem;">
+    <h1>Welcome to RedSpire Solutions LLC</h1>
+    <p style="font-size: 1.2rem; line-height: 1.6; max-width: 700px; margin: 0 auto;">
+      Providing specialized technical solutions for the entertainment industry. From temporary
+      connectivity solutions to cloud-based livestreaming, we deliver the technology infrastructure
+      that keeps your events running smoothly.
+    </p>
+  </div>
+
+  <div style="margin: 3rem 0;">
+    <h2>Our Services</h2>
+    <ul style="line-height: 1.8;">
+      <li><strong>Temporary Mesh WiFi & Private LTE</strong> - Reliable connectivity for festivals and events</li>
+      <li><strong>Cloud-based Livestreaming</strong> - Professional streaming for live performances</li>
+      <li><strong>Festival Operations Solutions</strong> - Comprehensive technical support for event logistics</li>
+      <li><strong>Software Integrations</strong> - Seamless platform and system integration</li>
+      <li><strong>A/V Solutions</strong> - Professional audio-visual systems and support</li>
+      <li><strong>Domain Administration</strong> - Complete domain management services</li>
+    </ul>
+  </div>
+
+  <div style="margin: 3rem 0;">
+    <h2>Industry Focus</h2>
+    <p style="line-height: 1.6;">
+      We specialize in supporting music festivals, concert venues, music labels, artists,
+      fairgrounds, and conference organizations. Our expertise in entertainment technology
+      ensures your event has the reliable infrastructure it needs to succeed.
+    </p>
+  </div>
+</article>
