@@ -35,8 +35,12 @@
 {{ content }}
 
 {% if site.external %}
-<footer>
+<footer style="display: flex; flex-direction: column; align-items: flex-start;">
   <div style="margin-bottom: 1rem;">{{ site.description | default: site.title }}</div>
+  <div style="margin-top: 1.5rem; font-size: 0.85em; opacity: 0.7;">
+    <a href="{{ "/privacy.html" | relative_url }}" style="margin-right: 1rem;">Privacy Policy</a>
+    <a href="{{ "/cookie-policy.html" | relative_url }}">Cookie Policy</a>
+  </div>
   <div style="margin-top: 1.5rem; font-size: 0.9em; opacity: 0.8; line-height: 1.6;" data-nosnippet>
     <strong>Business Address:</strong><br>
     <span data-address="6545 Market Ave. North STE 100"></span><br>
@@ -67,6 +71,8 @@
     link.querySelector('.email-text').textContent = email;
   });
 </script>
+<!-- iubenda Privacy Controls and Cookie Solution -->
+<script type="text/javascript" src="https://embeds.iubenda.com/widgets/c2edab23-b8c6-44f0-ae11-4f4baaf761e3.js"></script>
 {% endif %}
 
 </html>
